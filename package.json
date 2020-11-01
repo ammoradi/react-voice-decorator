@@ -36,5 +36,8 @@
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/preset-react": "^7.12.1"
+  },
+  "peerDependencies": {
+    "@use-it/interval": "^0.1.3"
   }
 }

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react"
-import PropTypes from "prop-types"
-import useInterval from "@use-it/interval"
+import React, { useState, useEffect, useCallback } from 'react'
+import PropTypes from 'prop-types'
+import useInterval from '@use-it/interval'
 
-import audioRecorder from "../libs/recorder"
+import audioRecorder from '../libs/recorder'
 
 function VoiceDecorator({ render, timeout }) {
   const [recorder, setRecorder] = useState(null)
@@ -41,7 +41,7 @@ function VoiceDecorator({ render, timeout }) {
         clearTimeout(timeoutId)
       }, timeout)
     } catch (_) {
-      console.error("Cannot record in your device")
+      console.error('Cannot record in your device')
     }
   }, [isRecording, timeout, stopRecord])
 
@@ -53,7 +53,7 @@ function VoiceDecorator({ render, timeout }) {
 
   const startPlay = useCallback(() => {
     if (!recorded) {
-      console.error("There is not any recorded voice to play")
+      console.error('There is not any recorded voice to play')
       return
     }
     setIsPlaying(true)

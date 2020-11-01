@@ -5,13 +5,13 @@ React voice recorder component using `navigator`'s `mediaDevices` and `MediaReco
 see **[Demo](https://codesandbox.io/s/react-voice-recorder-demo-9i8ik)** at **[https://codesandbox.io/s/react-voice-recorder-demo-9i8ik](https://codesandbox.io/s/react-voice-recorder-demo-9i8ik)**
 
 ## usage
-add package using `yarn`
+* add package using `yarn`
 
 ```
     yarn add react-voice-decorator
 ```
 
-use this render-props component:
+* use the render-props component:
 
 ```js
 import React from 'react'
@@ -37,6 +37,16 @@ export default function App() {
   )
 }
 ```
+
+* available props:
+
+| prop key | type |
+|  :---:  | :-: |
+| toggleRecord | function |
+| togglePlay | function |
+| isPlaying | boolean |
+| isRecording | boolean |
+| voice | Audio Object |
 
 ## limitation
 _This package doesn't work on Safari with iOS versions lower than 13.4 (for the higher versions it works fine)_

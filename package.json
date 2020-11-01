@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "react voice recorder component using navigator's mediaDevices and MediaRecorder api that provides record/play/pause functionalities for developers using render-props design pattern",
   "main": "index.js",
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/components -d dist --copy-files &&  babel ./src/libs -d dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -25,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/ammoradi/react-voice-recorder/issues"
   },
-  "homepage": "https://github.com/ammoradi/react-voice-recorder#readme"
+  "homepage": "https://github.com/ammoradi/react-voice-recorder#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/preset-react": "^7.12.1"
+  }
 }

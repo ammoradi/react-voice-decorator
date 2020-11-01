@@ -1,5 +1,5 @@
 {
-  "name": "react-voice-recorder",
+  "name": "react-voice-decorator",
   "version": "1.0.0",
   "description": "react voice recorder component using navigator's mediaDevices and MediaRecorder api that provides record/play/pause functionalities for developers using render-props design pattern",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ammoradi/react-voice-recorder.git"
+    "url": "git+https://github.com/ammoradi/react-voice-decorator.git"
   },
   "keywords": [
     "react",
@@ -24,15 +24,15 @@
     "sound",
     "voice-recorder",
     "navigator",
-    "mediadevices",
+    "mediaDevices",
     "MediaRecorder"
   ],
   "author": "Amirmohammad Moradi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ammoradi/react-voice-recorder/issues"
+    "url": "https://github.com/ammoradi/react-voice-decorator/issues"
   },
-  "homepage": "https://github.com/ammoradi/react-voice-recorder#readme",
+  "homepage": "https://github.com/ammoradi/react-voice-decorator#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",

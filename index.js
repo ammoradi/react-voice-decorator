@@ -1,3 +1,3 @@
-import VoiceRecorder from './dist/components/VoiceRecorder'
+import VoiceDecorator from './dist/components/VoiceDecorator'
 
-export default VoiceRecorder
+export default VoiceDecorator

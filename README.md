@@ -1,4 +1,4 @@
-# react-voice-recorder
+# react-voice-decorator
 React voice recorder component using `navigator`'s `mediaDevices` and `MediaRecorder `api that provides record/play/pause functionalities for developers using **render-props** design pattern.
 
 ## demo
@@ -8,7 +8,7 @@ see **[Demo](https://codesandbox.io/s/react-voice-recorder-demo-9i8ik)** at **[h
 add package using `yarn`
 
 ```
-    yarn add react-voice-recorder
+    yarn add react-voice-decorator
 ```
 
 use this render-props component:
@@ -16,7 +16,7 @@ use this render-props component:
 ```js
 import React from 'react'
 
-import VoiceDecorator from 'react-voice-recorder'
+import VoiceDecorator from 'react-voice-decorator'
 
 export default function App() {
   return (

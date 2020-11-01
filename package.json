@@ -1,0 +1,29 @@
+{
+  "name": "react-voice-recorder",
+  "version": "1.0.0",
+  "description": "react voice recorder component using navigator's mediaDevices and MediaRecorder api that provides record/play/pause functionalities for developers using render-props design pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammoradi/react-voice-recorder.git"
+  },
+  "keywords": [
+    "react",
+    "recorder",
+    "voice",
+    "sound",
+    "voice-recorder",
+    "navigator",
+    "mediadevices",
+    "MediaRecorder"
+  ],
+  "author": "Amirmohammad Moradi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ammoradi/react-voice-recorder/issues"
+  },
+  "homepage": "https://github.com/ammoradi/react-voice-recorder#readme"
+}

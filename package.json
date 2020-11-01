@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "test",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/components -d dist --copy-files &&  babel ./src/libs -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src/components -d dist --copy-files && babel ./src/libs -d dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/ammoradi/react-voice-recorder#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
     "@babel/preset-react": "^7.12.1"
   },
   "peerDependencies": {

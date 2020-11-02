@@ -1,4 +1,4 @@
-// Type definitions for react-voice-decorator 1.1.0
+// Type definitions for react-voice-decorator 1.2.0
 // Project: https://github.com/ammoradi/react-voice-decorator
 // Definitions by: TingYuLC <https://github.com/ammoradi>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -28,6 +28,6 @@ interface VoiceDecoratorProps {
   render?: (props: IRenderProps) => ReactNode
 }
 
-declare class VoiceDecorator extends FC<VoiceDecoratorProps> {}
+declare const VoiceDecorator: FC<VoiceDecoratorProps>
 
 export default VoiceDecorator

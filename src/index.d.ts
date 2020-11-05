@@ -10,6 +10,7 @@ interface IVoice {
   play: () => void
   pause: () => void
   isPaused: () => boolean
+  audio: HTMLAudioElement
 }
 
 interface IRenderProps {

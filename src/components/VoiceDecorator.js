@@ -20,8 +20,8 @@ function VoiceDecorator({ render, timeout }) {
   const stopRecord = useCallback(async () => {
     try {
       setIsRecording(false)
-      const audio = await recorder.stop()
-      setRecorded(audio)
+      const res = await recorder.stop()
+      setRecorded(res)
     } catch (_) {
       // nth
     }

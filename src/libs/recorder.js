@@ -54,7 +54,7 @@ const recorder = () => {
             }
             const isPaused = () => audio.paused
 
-            rsv({ play, pause, ...audio, isPaused })
+            rsv({ play, pause, audio, isPaused })
           })
 
           mediaRecorder.stop()

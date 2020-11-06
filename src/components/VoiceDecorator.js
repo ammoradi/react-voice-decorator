@@ -4,7 +4,7 @@ import useInterval from '@use-it/interval'
 
 import audioRecorder from '../libs/recorder'
 
-function VoiceDecorator({ render, timeout }) {
+function VoiceDecorator({ render, timeout, voiceGetter }) {
   const [recorder, setRecorder] = useState(null)
   const [isRecording, setIsRecording] = useState(false)
   const [recorded, setRecorded] = useState(null)
@@ -16,6 +16,10 @@ function VoiceDecorator({ render, timeout }) {
       setVoiceCounter(null)
     }
   }, [])
+
+  useEffect(() => {
+    voiceGetter(() => recorded?.audio)
+  }, [recorded])
 
   const stopRecord = useCallback(async () => {
     try {
@@ -76,8 +80,7 @@ function VoiceDecorator({ render, timeout }) {
     toggleRecord: () => (isRecording ? stopRecord() : startRecord()),
     togglePlay: () => (isPlaying ? stopPlay() : startPlay()),
     isPlaying,
-    isRecording,
-    voice: recorded
+    isRecording
   }
 
   return <>{render(props)}</>
@@ -85,11 +88,13 @@ function VoiceDecorator({ render, timeout }) {
 
 VoiceDecorator.propTypes = {
   render: PropTypes.func.isRequired,
-  timeout: PropTypes.number
+  timeout: PropTypes.number,
+  voiceGetter: PropTypes.func
 }
 
 VoiceDecorator.defaultProps = {
-  timeout: 120000
+  timeout: 120000,
+  voiceGetter: () => {}
 }
 
 export default VoiceDecorator

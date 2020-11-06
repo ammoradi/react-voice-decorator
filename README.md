@@ -14,11 +14,17 @@ see **[Demo](https://codesandbox.io/s/react-voice-recorder-demo-9i8ik)** at **[h
 * use the render-props component:
 
 ```js
-import React from 'react'
+import React, { useCallback, useRef } from 'react'
 
 import VoiceDecorator from 'react-voice-decorator'
 
 export default function App() {
+  const voiceRef = useRef(null)
+
+    const getVoice = useCallback((getterFn) => {
+    voiceRef.current = getterFn()
+  }, [])
+
   return (
     <div>
       <VoiceDecorator
@@ -32,6 +38,7 @@ export default function App() {
             </h1>
           </>
         )}
+        voiceGetter={getVoice}
       />
     </div>
   )
@@ -46,7 +53,10 @@ export default function App() {
 | togglePlay | function |
 | isPlaying | boolean |
 | isRecording | boolean |
-| voice | Audio Object |
+| voiceGetter | function |
+
+## ref
+You can get recorded voice as an audio object using react ref
 
 ## limitation
 _This package doesn't work on Safari with iOS versions lower than 13.4 (for the higher versions it works fine)_

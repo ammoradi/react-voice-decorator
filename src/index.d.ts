@@ -1,4 +1,4 @@
-// Type definitions for react-voice-decorator 1.5.2
+// Type definitions for react-voice-decorator 1.5.3
 // Project: https://github.com/ammoradi/react-voice-decorator
 // Definitions by: TingYuLC <https://github.com/ammoradi>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -24,7 +24,7 @@ interface VoiceDecoratorProps {
 
   /** render prop */
   render?: (props: IRenderProps) => ReactNode
-  voiceGetter: (getterFn: () => IGetterFnResult) => void
+  voiceGetter?: (getterFn: () => IGetterFnResult) => void
 }
 
 declare const VoiceDecorator: FC<VoiceDecoratorProps>

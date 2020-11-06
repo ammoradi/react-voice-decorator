@@ -18,7 +18,7 @@ function VoiceDecorator({ render, timeout, voiceGetter }) {
   }, [])
 
   useEffect(() => {
-    voiceGetter(() => recorded?.audio)
+    voiceGetter(() => ({ audio: recorded?.audio, blob: recorded?.dataBlob }))
   }, [recorded])
 
   const stopRecord = useCallback(async () => {

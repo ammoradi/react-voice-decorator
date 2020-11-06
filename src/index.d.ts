@@ -1,4 +1,4 @@
-// Type definitions for react-voice-decorator 1.4.0
+// Type definitions for react-voice-decorator 1.5.0
 // Project: https://github.com/ammoradi/react-voice-decorator
 // Definitions by: TingYuLC <https://github.com/ammoradi>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -6,12 +6,17 @@
 
 import { FC, ReactNode } from 'react'
 
+interface IGetterFnResult {
+  audio: HTMLAudioElement | null
+  blob: Blob | null
+}
+
 interface IRenderProps {
   toggleRecord: () => void
   togglePlay: () => void
   isPlaying: boolean
   isRecording: boolean
-  voiceGetter: (getterFn: () => void) => void
+  voiceGetter: (getterFn: () => IGetterFnResult) => void
 }
 
 interface VoiceDecoratorProps {

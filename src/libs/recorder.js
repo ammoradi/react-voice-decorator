@@ -9,14 +9,15 @@ if (navigator.mediaDevices === undefined) {
 // with getUserMedia as it would overwrite existing properties.
 // Here, we will just add the getUserMedia property if it's missing.
 if (navigator.mediaDevices.getUserMedia === undefined) {
-  navigator.mediaDevices.getUserMedia = constraints => {
+  navigator.mediaDevices.getUserMedia = (constraints) => {
     // First get ahold of the legacy getUserMedia, if present
     const getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia
 
     // Some browsers just don't implement it - return a rejected promise with an error
     // to keep a consistent interface
     if (!getUserMedia) {
-      if (!checked) console.error('Cannot record in iOS devices with versions lower than 13.4')
+      if (!checked)
+        console.error('Cannot record in iOS devices with versions lower than 13.4')
       checked = true
       return Promise.reject('getUserMedia is not implemented in this browser')
     }
@@ -29,22 +30,25 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
 }
 
 const recorder = () => {
-  return new Promise(async resolve => {
-    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+  return new Promise(async (resolve) => {
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
       const mediaRecorder = new MediaRecorder(stream)
       let src = ''
+      let dataBlob = ''
 
-      mediaRecorder.addEventListener('dataavailable', event => {
+      mediaRecorder.addEventListener('dataavailable', (event) => {
         src = URL.createObjectURL(event.data)
+        dataBlob = event.data
       })
 
       const start = () => {
         src = ''
+        dataBlob = ''
         mediaRecorder.start()
       }
 
       const stop = () =>
-        new Promise(rsv => {
+        new Promise((rsv) => {
           mediaRecorder.addEventListener('stop', () => {
             const audio = new Audio(src)
             const play = () => audio.play()
@@ -54,11 +58,11 @@ const recorder = () => {
             }
             const isPaused = () => audio.paused
 
-            rsv({ play, pause, audio, isPaused })
+            rsv({ play, pause, audio, isPaused, dataBlob })
           })
 
           mediaRecorder.stop()
-          mediaRecorder.stream.getTracks().forEach(i => i.stop())
+          mediaRecorder.stream.getTracks().forEach((i) => i.stop())
         })
 
       resolve({ start, stop })
